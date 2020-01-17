@@ -27,12 +27,14 @@ public class App {
         m.put("Gojira", 20.00);
         m.put("Secret Band", 15.00);
         m.put("Of Mice and Men", 25.00);
+
         displayBands();
         while (true) {
             final String input = sc.nextLine();
             for (final Map.Entry<String, Double> entry : m.entrySet()) {
                 if (entry.getKey().equals(input)) {
                     System.out.println("That will be " + entry.getValue());
+                    sc.close();
                     return input;
                 } else {
                     continue;
@@ -42,12 +44,11 @@ public class App {
     }
 
     public static void main(final String[] args) {
-        final Scanner sc = new Scanner(System.in);
         final Map<String, Double> m = new HashMap<String, Double>();
         m.put("Big Thief", 5.00);
         m.put("Gojira", 20.00);
         m.put("Secret Band", 15.00);
         m.put("Of Mice and Men", 25.00);
-        final String band = getBand();
+        getBand();
     }
 }
